@@ -1,6 +1,8 @@
 name: ci
 
 on:
+  push:
+    branches: [ "main" ]
   pull_request:
 
 jobs:
@@ -10,14 +12,5 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
-        with:
-          platforms: linux/amd64
-
-      - name: Build Docker image
-        uses: docker/build-action@v4
-        with:
-          context: .
-          file: ./Dockerfile
-          platforms: linux/amd64
+      - name: Docker Buildx
+        run: docker buildx build --platform linux/amd64 --tag arduino-processing .
