@@ -10,11 +10,13 @@ WORKDIR /
 RUN curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh -s 0.34.1
 COPY arduino/arduino-cli.yaml /root/.arduino15/arduino-cli.yaml
 RUN arduino-cli core update-index
+RUN arduino-cli update
 RUN arduino-cli core install arduino:samd
-RUN arduino-cli core install adafruit:samd
 RUN arduino-cli core install SparkFun:samd
+RUN arduino-cli core install adafruit:samd
 RUN arduino-cli core install teensy:avr
 RUN arduino-cli lib install elapsedMillis
+RUN rm -rf /root/.arduino15/staging
 
 # processing cli
 RUN curl -fsSL -o /opt/processing.tgz https://github.com/processing/processing4/releases/download/processing-1293-4.3/processing-4.3-linux-x64.tgz
