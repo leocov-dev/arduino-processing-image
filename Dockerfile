@@ -1,3 +1,5 @@
+LABEL org.opencontainers.image.description="Arduino and Processing container for CI workflows"
+
 FROM ubuntu:20.04
 
 # install global deps
