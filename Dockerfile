@@ -1,7 +1,5 @@
 FROM ubuntu:20.04
 
-LABEL org.opencontainers.image.description="Arduino and Processing container for CI workflows"
-
 # install global deps
 RUN apt-get update && apt-get install -y curl unzip
 
