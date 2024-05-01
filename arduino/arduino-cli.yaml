@@ -3,3 +3,17 @@ board_manager:
     - https://adafruit.github.io/arduino-board-index/package_adafruit_index.json
     - https://raw.githubusercontent.com/sparkfun/Arduino_Boards/master/IDE_Board_Manager/package_sparkfun_index.json
     - https://www.pjrc.com/teensy/package_teensy_index.json
+
+logging:
+  file: ""
+  format: text
+  level: info
+
+output:
+  no_color: true
+
+sketch:
+  always_export_binaries: false
+
+updater:
+  enable_notification: false
